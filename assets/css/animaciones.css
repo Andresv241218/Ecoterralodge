@@ -1,0 +1,634 @@
+/* =========================================
+   ANIMACIONES
+========================================= */
+
+.reveal,
+.reveal-left,
+.reveal-right,
+.reveal-up {
+
+    opacity: 0;
+
+    transition:
+        opacity 0.9s ease,
+        transform 0.9s ease;
+}
+
+
+.reveal {
+
+    transform: translateY(45px);
+}
+
+
+.reveal-left {
+
+    transform: translateX(-60px);
+}
+
+
+.reveal-right {
+
+    transform: translateX(60px);
+}
+
+
+.reveal-up {
+
+    transform: translateY(70px);
+}
+
+
+/* ELEMENTO VISIBLE */
+
+.reveal.active,
+.reveal-left.active,
+.reveal-right.active,
+.reveal-up.active {
+
+    opacity: 1;
+
+    transform: translate(0);
+}
+
+
+/* =========================================
+   HOVER IMAGEN INTRO
+========================================= */
+
+.intro-image img {
+
+    transition:
+        transform 0.8s ease,
+        box-shadow 0.8s ease;
+}
+
+
+.intro-image:hover img {
+
+    transform: scale(1.025);
+
+    box-shadow:
+        0 30px 60px rgba(0, 42, 33, 0.24);
+}
+
+/* =========================================
+   MICROANIMACIONES - INTRO
+========================================= */
+
+
+/* =========================================
+   01 - APARICIÓN SUTIL
+========================================= */
+
+.intro-image-number {
+
+    opacity: 0;
+
+    transform: translateY(15px);
+
+    transition:
+        opacity 0.8s ease 0.35s,
+        transform 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.35s;
+}
+
+
+.intro-image.reveal-left.active .intro-image-number {
+
+    opacity: 0.08;
+
+    transform: translateY(0);
+}
+
+
+/* =========================================
+   BADGE - ENTRADA SUAVE
+========================================= */
+
+.intro-badge {
+
+    opacity: 0;
+
+    transform: translateY(22px);
+
+    transition:
+        opacity 0.8s ease 0.5s,
+        transform 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.5s,
+        box-shadow 0.4s ease;
+}
+
+
+.intro-image.reveal-left.active .intro-badge {
+
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+
+/* =========================================
+   LÍNEA DECORATIVA
+========================================= */
+
+.intro-line {
+
+    transform: scaleX(0);
+
+    transform-origin: left;
+
+    transition:
+        transform 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.45s;
+}
+
+
+.intro-content.reveal-right.active .intro-line {
+
+    transform: scaleX(1);
+}
+
+
+/* =========================================
+   MARCA INFERIOR
+========================================= */
+
+.intro-bottom-mark {
+
+    opacity: 0;
+
+    transform: translateY(18px);
+
+    transition:
+        opacity 0.8s ease 0.7s,
+        transform 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.7s;
+}
+
+
+.intro-bottom-mark.reveal.active {
+
+    opacity: 0.65;
+
+    transform: translateY(0);
+}
+
+
+/* =========================================
+   LÍNEAS INFERIORES
+========================================= */
+
+.intro-bottom-line {
+
+    transform: scaleX(0);
+
+    transform-origin: center;
+
+    transition:
+        transform 0.6s ease 0.9s;
+}
+
+
+.intro-bottom-mark.reveal.active .intro-bottom-line {
+
+    transform: scaleX(1);
+}
+
+
+/* =========================================
+   MONTAÑA - MOVIMIENTO ÚNICO
+========================================= */
+
+.intro-mountain-watermark {
+
+    transform: translateX(25px);
+
+    transition:
+        transform 1.8s cubic-bezier(0.22, 1, 0.36, 1),
+        opacity 1.8s ease;
+}
+
+
+.intro-lodge.active .intro-mountain-watermark {
+
+    transform: translateX(0);
+}
+
+
+/* =========================================
+   REDUCIR MOVIMIENTO
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .intro-image-number,
+    .intro-badge,
+    .intro-line,
+    .intro-bottom-mark,
+    .intro-bottom-line,
+    .intro-mountain-watermark {
+
+        opacity: 1;
+
+        transform: none;
+
+        transition: none;
+    }
+
+}
+
+/* =========================================
+   MICROANIMACIONES
+   RESTAURANTE & BAR
+========================================= */
+
+
+/* =========================================
+   DECORACIÓN
+========================================= */
+
+.restaurant-decoration {
+
+    transform: translateX(25px);
+
+    transition:
+        transform 1.6s cubic-bezier(0.22, 1, 0.36, 1),
+        opacity 1.6s ease;
+}
+
+
+/* Cuando entra la sección */
+
+.restaurant-bar:has(.restaurant-heading.active)
+.restaurant-decoration {
+
+    transform: translateX(0);
+
+}
+
+
+/* =========================================
+   NÚMERO
+========================================= */
+
+.restaurant-number {
+
+    opacity: 0;
+
+    transform: translateY(-15px);
+
+    transition:
+        opacity 0.8s ease 0.35s,
+        transform 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.35s;
+}
+
+
+.restaurant-main-image.reveal-left.active
+.restaurant-number {
+
+    opacity: 0.12;
+
+    transform: translateY(0);
+
+}
+
+
+/* =========================================
+   CAPTION
+========================================= */
+
+.restaurant-image-caption {
+
+    opacity: 0;
+
+    transform: translateY(15px);
+
+    transition:
+        opacity 0.7s ease 0.55s,
+        transform 0.7s ease 0.55s;
+}
+
+
+.restaurant-main-image.reveal-left.active
+.restaurant-image-caption {
+
+    opacity: 1;
+
+    transform: translateY(0);
+
+}
+
+
+/* =========================================
+   CONTENIDO
+========================================= */
+
+.restaurant-mini-label {
+
+    opacity: 0;
+
+    transform: translateY(12px);
+
+    transition:
+        opacity 0.6s ease 0.25s,
+        transform 0.6s ease 0.25s;
+}
+
+
+.restaurant-content.reveal-right.active
+.restaurant-mini-label {
+
+    opacity: 1;
+
+    transform: translateY(0);
+
+}
+
+
+/* =========================================
+   DETALLES
+========================================= */
+
+.restaurant-details {
+
+    opacity: 0;
+
+    transform: translateY(12px);
+
+    transition:
+        opacity 0.7s ease 0.5s,
+        transform 0.7s ease 0.5s;
+}
+
+
+.restaurant-content.reveal-right.active
+.restaurant-details {
+
+    opacity: 1;
+
+    transform: translateY(0);
+
+}
+
+
+/* =========================================
+   ENLACE
+========================================= */
+
+.restaurant-link {
+
+    opacity: 0;
+
+    transform: translateY(12px);
+
+    transition:
+        opacity 0.7s ease 0.7s,
+        transform 0.7s ease 0.7s,
+        gap 0.3s ease,
+        color 0.3s ease;
+}
+
+
+.restaurant-content.reveal-right.active
+.restaurant-link {
+
+    opacity: 1;
+
+    transform: translateY(0);
+
+}
+
+
+/* =========================================
+   MOVIMIENTO AL HACER HOVER
+========================================= */
+
+.restaurant-secondary-image {
+
+    transition:
+        transform 0.5s ease,
+        box-shadow 0.5s ease;
+}
+
+
+.restaurant-secondary-image:hover {
+
+    transform: translateY(-6px);
+
+    box-shadow:
+        0 30px 60px rgba(0, 42, 33, 0.18);
+
+}
+
+
+/* =========================================
+   REDUCIR MOVIMIENTO
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .restaurant-decoration,
+    .restaurant-number,
+    .restaurant-image-caption,
+    .restaurant-mini-label,
+    .restaurant-details,
+    .restaurant-link {
+
+        opacity: 1;
+
+        transform: none;
+
+        transition: none;
+    }
+
+}
+
+
+/* =========================================
+   MICROANIMACIONES
+   ACTIVIDADES
+========================================= */
+
+
+/* =========================================
+   NÚMERO PRINCIPAL
+========================================= */
+
+.adventure-number {
+
+    opacity: 0;
+
+    transform: translateY(-15px);
+
+    transition:
+        opacity 0.8s ease 0.35s,
+        transform 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.35s;
+}
+
+
+.adventure-image.reveal-left.active
+.adventure-number {
+
+    opacity: 0.12;
+
+    transform: translateY(0);
+}
+
+
+/* =========================================
+   CAPTION
+========================================= */
+
+.adventure-image-caption {
+
+    opacity: 0;
+
+    transform: translateY(15px);
+
+    transition:
+        opacity 0.7s ease 0.55s,
+        transform 0.7s ease 0.55s;
+}
+
+
+.adventure-image.reveal-left.active
+.adventure-image-caption {
+
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+
+/* =========================================
+   ITEMS
+========================================= */
+
+.adventure-item {
+
+    opacity: 0;
+
+    transform: translateX(20px);
+
+    transition:
+        opacity 0.6s ease,
+        transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+
+.adventure-content.reveal-right.active
+.adventure-item:nth-child(1) {
+
+    opacity: 1;
+
+    transform: translateX(0);
+
+    transition-delay: 0.25s;
+}
+
+
+.adventure-content.reveal-right.active
+.adventure-item:nth-child(2) {
+
+    opacity: 1;
+
+    transform: translateX(0);
+
+    transition-delay: 0.35s;
+}
+
+
+.adventure-content.reveal-right.active
+.adventure-item:nth-child(3) {
+
+    opacity: 1;
+
+    transform: translateX(0);
+
+    transition-delay: 0.45s;
+}
+
+
+.adventure-content.reveal-right.active
+.adventure-item:nth-child(4) {
+
+    opacity: 1;
+
+    transform: translateX(0);
+
+    transition-delay: 0.55s;
+}
+
+
+.adventure-content.reveal-right.active
+.adventure-item:nth-child(5) {
+
+    opacity: 1;
+
+    transform: translateX(0);
+
+    transition-delay: 0.65s;
+}
+
+
+/* =========================================
+   BOTÓN
+========================================= */
+
+.adventure-content .btn {
+
+    opacity: 0;
+
+    transform: translateY(15px);
+
+    transition:
+        opacity 0.7s ease 0.8s,
+        transform 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.8s;
+}
+
+
+.adventure-content.reveal-right.active .btn {
+
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+
+/* =========================================
+   MARCA DE AGUA
+========================================= */
+
+.activities-watermark {
+
+    transform: translateX(30px);
+
+    transition:
+        transform 1.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+
+.activities:has(.activities-heading.active)
+.activities-watermark {
+
+    transform: translateX(0);
+}
+
+
+/* =========================================
+   REDUCIR MOVIMIENTO
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .adventure-number,
+    .adventure-image-caption,
+    .adventure-item,
+    .adventure-content .btn,
+    .activities-watermark {
+
+        opacity: 1;
+
+        transform: none;
+
+        transition: none;
+    }
+
+}
